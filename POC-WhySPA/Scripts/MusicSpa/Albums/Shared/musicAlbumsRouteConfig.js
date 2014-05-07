@@ -11,5 +11,6 @@
             templateUrl: "/MusicSpa/Albums/Edit"
         }).otherwise({ redirectTo: "/" });
     };
+    routeConfig.$inject = ['$routeProvider'];
     app.config(routeConfig);
 })(angular.module("musicAlbumsApp"));
