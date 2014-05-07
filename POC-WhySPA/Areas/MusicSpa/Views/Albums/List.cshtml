@@ -1,0 +1,30 @@
+﻿@using POC_WhySPA.Areas.MusicSpa.Resources
+<h2>SPA - Music Albums</h2>
+<form class="form-inline" role="form" data-ng-submit="search()">
+    <div class="form-group">
+        <label for="selectGenres">@Albums.LabelGenres</label>
+        <select id="selectGenres" data-ng-model="selectedGenre" class="form-control">
+            <option data-ng-selected="{{genre.Key === selectedGenre}}"
+                data-ng-repeat="genre in genres" value="{{genre.Key}}">{{genre.Value}}</option>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Search</button>
+</form>
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Albums.HeaderTitle</th>
+            <th>@Albums.HeaderArtistName</th>
+            <th>@Albums.HeaderPrice</th>
+            <th>@Albums.HeaderGenre</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr data-ng-repeat="album in albums">
+            <td><a href="#/Edit/{{album.Id}}">{{album.Title}}</a></td>
+            <td>{{album.Artist.Value}}</td>
+            <td>{{album.Price}}</td>
+            <td>{{album.Genre}}</td>
+        </tr>
+    </tbody>
+</table>

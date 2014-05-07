@@ -1,0 +1,39 @@
+﻿@using POC_WhySPA.Areas.Music.Resources;
+@model POC_WhySPA.Areas.Music.ViewModels.Albums.IndexModel
+@{
+    ViewBag.Title = "Music Albums";
+}
+
+<h2>Music Albums</h2>
+<form class="form-inline" role="form" method="POST">
+    <div class="form-group">
+        @Html.LabelFor(m => m.SelectedGenre)
+        @Html.DropDownListFor(m => m.SelectedGenre, Model.Genres, new { @class = "form-control" })
+    </div>
+    <button type="submit" class="btn btn-primary">Search</button>
+</form>
+
+@if (Model.Albums.Any())
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>@Albums.HeaderTitle</th>
+                <th>@Albums.HeaderArtistName</th>
+                <th>@Albums.HeaderPrice</th>
+                <th>@Albums.HeaderGenre</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var album in Model.Albums)
+            {
+                <tr>
+                    <td><a href="@Url.Action("Edit", "Albums", new { id = album.Id })">@album.Title</a></td>
+                    <td>@album.Artist.Name</td>
+                    <td>@album.Price</td>
+                    <td>@album.Genre</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
