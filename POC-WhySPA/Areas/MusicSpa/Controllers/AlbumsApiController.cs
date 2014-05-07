@@ -35,7 +35,7 @@ namespace POC_WhySPA.Areas.MusicSpa.Controllers
         {
             using (var ctx = new MvcMusicStoreEntities())
             {
-                var albumRaw = ctx.Albums.Single(q => q.AlbumId == id);
+                var albumRaw = ctx.Albums.SingleOrDefault(q => q.AlbumId == id);
                 if (albumRaw == null) throw new HttpResponseException(HttpStatusCode.NotFound);
                 //TODO: Use Automapper instead
                 albumRaw.Title = album.Title;

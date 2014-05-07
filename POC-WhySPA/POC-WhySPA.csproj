@@ -270,13 +270,14 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.9.0.js" />
     <Content Include="Scripts\jquery-1.9.0.min.js" />
-    <Content Include="Scripts\MusicSpa\Albums\musicAlbumsNavigationService.js" />
-    <Content Include="Scripts\MusicSpa\Albums\musicAlbumEditService.js" />
-    <Content Include="Scripts\MusicSpa\Albums\musicAlbumEditController.js" />
-    <Content Include="Scripts\MusicSpa\Albums\musicAlbumsController.js" />
-    <Content Include="Scripts\MusicSpa\Albums\musicAlbumsModule.js" />
-    <Content Include="Scripts\MusicSpa\Albums\musicAlbumsRouteConfig.js" />
-    <Content Include="Scripts\MusicSpa\Albums\musicAlbumsService.js" />
+    <Content Include="Scripts\MusicSpa\Albums\Shared\musicAlbumsLookupService.js" />
+    <Content Include="Scripts\MusicSpa\Albums\Shared\musicAlbumsNavigationService.js" />
+    <Content Include="Scripts\MusicSpa\Albums\Edit\musicAlbumEditService.js" />
+    <Content Include="Scripts\MusicSpa\Albums\Edit\musicAlbumEditController.js" />
+    <Content Include="Scripts\MusicSpa\Albums\List\musicAlbumsController.js" />
+    <Content Include="Scripts\MusicSpa\Albums\Shared\musicAlbumsModule.js" />
+    <Content Include="Scripts\MusicSpa\Albums\Shared\musicAlbumsRouteConfig.js" />
+    <Content Include="Scripts\MusicSpa\Albums\List\musicAlbumsService.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
