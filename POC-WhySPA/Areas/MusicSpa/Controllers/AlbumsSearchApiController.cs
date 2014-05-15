@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Web.Http;
 using POC_WhySPA.Areas.MusicSpa.Models;
+using POC_WhySPA.Areas.MusicSpa.Models.Albums;
 using POC_WhySPA.Models;
 
 namespace POC_WhySPA.Areas.MusicSpa.Controllers

@@ -17,20 +17,49 @@ namespace POC_WhySPA.App_Start
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include("~/Scripts/bootstrap.js"));
             bundles.Add(new StyleBundle("~/Content/bootstrap").Include("~/Content/bootstrap.css"));
 
+            bundles.Add(new ScriptBundle("~/bundles/oldIEBrowsersSupport").Include(
+                "~/Scripts/respond.js",
+                "~/Scripts/html5shiv.js"));
+
             //AngularJs
             bundles.Add(
                 new ScriptBundle("~/bundles/angular").Include("~/Scripts/angular.js")
                                                      .Include("~/Scripts/angular-route.js"));
-            //Music Albums AngularJs Scripts
+            //AngularJs Scripts - Music Albums Module
             bundles.Add(
-                new ScriptBundle("~/bundles/angularMusicAlbums").Include("~/Scripts/MusicSpa/Albums/Shared/musicAlbumsModule.js")
-                .Include("~/Scripts/MusicSpa/Albums/Shared/musicAlbumsRouteConfig.js")
-                                                                .Include("~/Scripts/MusicSpa/Albums/Shared/musicAlbumsLookupService.js")
-                                                                .Include("~/Scripts/MusicSpa/Albums/Shared/musicAlbumsNavigationService.js")
-                                                                .Include("~/Scripts/MusicSpa/Albums/List/musicAlbumsService.js")
-                                                                .Include("~/Scripts/MusicSpa/Albums/List/musicAlbumsController.js")
-                                                                .Include("~/Scripts/MusicSpa/Albums/Edit/musicAlbumEditService.js")
-                                                                .Include("~/Scripts/MusicSpa/Albums/Edit/musicAlbumEditController.js"));
+                new ScriptBundle("~/bundles/angularMusicAlbums").Include(
+                    "~/Scripts/MusicSpa/Albums/Shared/musicAlbumsModule.js")
+                                                                .Include(
+                                                                    "~/Scripts/MusicSpa/Albums/Shared/musicAlbumsRouteConfig.js")
+                                                                .Include(
+                                                                    "~/Scripts/MusicSpa/Albums/Shared/musicAlbumsLookupService.js")
+                                                                .Include(
+                                                                    "~/Scripts/MusicSpa/Albums/Shared/musicAlbumsNavigationService.js")
+                                                                .Include(
+                                                                    "~/Scripts/MusicSpa/Albums/List/musicAlbumsService.js")
+                                                                .Include(
+                                                                    "~/Scripts/MusicSpa/Albums/List/musicAlbumsController.js")
+                                                                .Include(
+                                                                    "~/Scripts/MusicSpa/Albums/Edit/musicAlbumEditService.js")
+                                                                .Include(
+                                                                    "~/Scripts/MusicSpa/Albums/Edit/musicAlbumEditController.js"));
+            //AngularJs Scripts - Movie DVDs Module
+            bundles.Add(new ScriptBundle("~/bundles/angularMovieDvds").Include(
+                "~/Scripts/MusicSpa/MovieDvds/Shared/movieDvdsModule.js")
+                                                                      .Include(
+                                                                          "~/Scripts/MusicSpa/MovieDvds/Shared/movieDvdsRouteConfig.js")
+                                                                      .Include(
+                                                                          "~/Scripts/MusicSpa/MovieDvds/Shared/movieDvdsLookupService.js")
+                                                                      .Include(
+                                                                          "~/Scripts/MusicSpa/MovieDvds/Shared/movieDvdsNavigationService.js")
+                                                                      .Include(
+                                                                          "~/Scripts/MusicSpa/MovieDvds/List/movieDvdsService.js")
+                                                                      .Include(
+                                                                          "~/Scripts/MusicSpa/MovieDvds/List/movieDvdsController.js")
+                                                                      .Include(
+                                                                          "~/Scripts/MusicSpa/MovieDvds/Edit/movieDvdEditService.js")
+                                                                      .Include(
+                                                                          "~/Scripts/MusicSpa/MovieDvds/Edit/movieDvdEditController.js"));
         }
     }
 }

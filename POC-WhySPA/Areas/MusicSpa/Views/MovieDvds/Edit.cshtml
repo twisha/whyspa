@@ -1,0 +1,39 @@
+﻿@using POC_WhySPA.Areas.MusicSpa.Resources.MovieDvds
+<h2>Edit Movie DVD</h2>
+<div class="alert alert-success alert-dismissable" data-ng-show="saveSuccess === true">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+    Your changes have been saved successfully.
+</div>
+<div class="alert alert-danger alert-dismissable" data-ng-show="saveSuccess === false">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+    Unknown error occurred while processing your request. Please try again.
+</div>
+<form class="form-horizontal" role="form" data-ng-submit="saveMovieDvd()">
+    <div class="form-group">
+        <label for="txtMovieDvdTitle" class="col-sm-2 control-label">@MovieDvdEdit.Title</label>
+        <div class="col-sm-10">
+            <input type="text" id="txtMovieDvdTitle" data-ng-model="movieDvd.Title" required class="form-control" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="txtMovieDvdPrice" class="col-sm-2 control-label">@MovieDvdEdit.Price</label>
+        <div class="col-sm-10">
+            <input type="text" id="txtMovieDvdPrice" data-ng-model="movieDvd.Price" class="form-control" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="selectMovieDvdGenres" class="col-sm-2 control-label">@MovieDvdEdit.Genre</label>
+        <div class="col-sm-10">
+            <select id="selectMovieDvdGenres" data-ng-model="movieDvd.Genre.Key" class="form-control">
+                <option data-ng-selected="{{genre.Key === movieDvd.Genre.Key}}"
+                    data-ng-repeat="genre in genres" value="{{genre.Key}}">{{genre.Value}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-primary">Save</button>
+            <button class="btn btn-default" data-ng-click="navigateToList()">Return to List</button>
+        </div>
+    </div>
+</form>

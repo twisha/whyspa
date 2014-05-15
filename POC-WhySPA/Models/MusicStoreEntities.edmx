@@ -11,6 +11,8 @@
           <EntitySet Name="Carts" EntityType="MvcMusicStoreModel.Store.Carts" store:Type="Tables" />
           <EntitySet Name="EdmMetadata" EntityType="MvcMusicStoreModel.Store.EdmMetadata" store:Type="Tables" />
           <EntitySet Name="Genres" EntityType="MvcMusicStoreModel.Store.Genres" store:Type="Tables" />
+          <EntitySet Name="MovieDvds" EntityType="MvcMusicStoreModel.Store.MovieDvds" store:Type="Tables" />
+          <EntitySet Name="MovieGenres" EntityType="MvcMusicStoreModel.Store.MovieGenres" store:Type="Tables" />
           <EntitySet Name="OrderDetails" EntityType="MvcMusicStoreModel.Store.OrderDetails" store:Type="Tables" />
           <EntitySet Name="Orders" EntityType="MvcMusicStoreModel.Store.Orders" store:Type="Tables" />
           <AssociationSet Name="Album_Artist" Association="MvcMusicStoreModel.Store.Album_Artist">
@@ -24,6 +26,10 @@
           <AssociationSet Name="Genre_Albums" Association="MvcMusicStoreModel.Store.Genre_Albums">
             <End Role="Genres" EntitySet="Genres" />
             <End Role="Albums" EntitySet="Albums" />
+          </AssociationSet>
+          <AssociationSet Name="MovieGenre_MovieDvd" Association="MvcMusicStoreModel.Store.MovieGenre_MovieDvd">
+            <End Role="MovieGenres" EntitySet="MovieGenres" />
+            <End Role="MovieDvds" EntitySet="MovieDvds" />
           </AssociationSet>
           <AssociationSet Name="Order_OrderDetails" Association="MvcMusicStoreModel.Store.Order_OrderDetails">
             <End Role="Orders" EntitySet="Orders" />
@@ -76,6 +82,22 @@
           <Property Name="GenreId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="nvarchar" />
           <Property Name="Description" Type="nvarchar" />
+        </EntityType>
+        <EntityType Name="MovieDvds">
+          <Key>
+            <PropertyRef Name="MovieDvdId" />
+          </Key>
+          <Property Name="MovieDvdId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="160" />
+          <Property Name="Price" Type="numeric" Nullable="false" />
+          <Property Name="MovieGenreId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MovieGenres">
+          <Key>
+            <PropertyRef Name="MovieGenreId" />
+          </Key>
+          <Property Name="MovieGenreId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="200" />
         </EntityType>
         <EntityType Name="OrderDetails">
           <Key>
@@ -147,6 +169,20 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="MovieGenre_MovieDvd">
+          <End Role="MovieGenres" Type="MvcMusicStoreModel.Store.MovieGenres" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="MovieDvds" Type="MvcMusicStoreModel.Store.MovieDvds" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MovieGenres">
+              <PropertyRef Name="MovieGenreId" />
+            </Principal>
+            <Dependent Role="MovieDvds">
+              <PropertyRef Name="MovieGenreId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="Order_OrderDetails">
           <End Role="Orders" Type="MvcMusicStoreModel.Store.Orders" Multiplicity="1">
             <OnDelete Action="Cascade" />
@@ -206,6 +242,12 @@
           <AssociationSet Name="Order_OrderDetails" Association="MvcMusicStoreModel.Order_OrderDetails">
             <End Role="Orders" EntitySet="Orders" />
             <End Role="OrderDetails" EntitySet="OrderDetails" />
+          </AssociationSet>
+          <EntitySet Name="MovieDvds" EntityType="MvcMusicStoreModel.MovieDvd" />
+          <EntitySet Name="MovieGenres" EntityType="MvcMusicStoreModel.MovieGenre" />
+          <AssociationSet Name="MovieGenre_MovieDvd" Association="MvcMusicStoreModel.MovieGenre_MovieDvd">
+            <End Role="MovieGenre" EntitySet="MovieGenres" />
+            <End Role="MovieDvd" EntitySet="MovieDvds" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="Album">
@@ -359,6 +401,38 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="MovieDvd">
+          <Key>
+            <PropertyRef Name="MovieDvdId" />
+          </Key>
+          <Property Type="Int32" Name="MovieDvdId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Title" Nullable="false" MaxLength="160" FixedLength="false" Unicode="true" />
+          <Property Type="Decimal" Name="Price" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="Int32" Name="MovieGenreId" Nullable="false" />
+          <NavigationProperty Name="MovieGenre" Relationship="MvcMusicStoreModel.MovieGenre_MovieDvd" FromRole="MovieDvd" ToRole="MovieGenre" />
+        </EntityType>
+        <EntityType Name="MovieGenre">
+          <Key>
+            <PropertyRef Name="MovieGenreId" />
+          </Key>
+          <Property Type="Int32" Name="MovieGenreId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="MovieDvds" Relationship="MvcMusicStoreModel.MovieGenre_MovieDvd" FromRole="MovieGenre" ToRole="MovieDvd" />
+        </EntityType>
+        <Association Name="MovieGenre_MovieDvd">
+          <End Type="MvcMusicStoreModel.MovieGenre" Role="MovieGenre" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="MvcMusicStoreModel.MovieDvd" Role="MovieDvd" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MovieGenre">
+              <PropertyRef Name="MovieGenreId" />
+            </Principal>
+            <Dependent Role="MovieDvd">
+              <PropertyRef Name="MovieGenreId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -440,6 +514,24 @@
                 <ScalarProperty Name="Phone" ColumnName="Phone" />
                 <ScalarProperty Name="Email" ColumnName="Email" />
                 <ScalarProperty Name="Total" ColumnName="Total" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MovieDvds">
+            <EntityTypeMapping TypeName="MvcMusicStoreModel.MovieDvd">
+              <MappingFragment StoreEntitySet="MovieDvds">
+                <ScalarProperty Name="MovieGenreId" ColumnName="MovieGenreId" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="MovieDvdId" ColumnName="MovieDvdId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MovieGenres">
+            <EntityTypeMapping TypeName="MvcMusicStoreModel.MovieGenre">
+              <MappingFragment StoreEntitySet="MovieGenres">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="MovieGenreId" ColumnName="MovieGenreId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

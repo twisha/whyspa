@@ -1,0 +1,28 @@
+﻿@using POC_WhySPA.Areas.MusicSpa.Resources.MovieDvds
+<h2>SPA - Movie DVDs</h2>
+<form class="form-inline" role="form" data-ng-submit="search()">
+    <div class="form-group">
+        <label for="selectGenres">@MovieDvds.LabelGenres</label>
+        <select id="selectGenres" data-ng-model="selectedGenre" class="form-control">
+            <option data-ng-selected="{{genre.Key == selectedGenre}}"
+                    data-ng-repeat="genre in genres" value="{{genre.Key}}">{{genre.Value}}</option>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Search</button>
+</form>
+<table class="table">
+    <thead>
+        <tr>
+            <th>@MovieDvds.HeaderTitle</th>
+            <th>@MovieDvds.HeaderPrice</th>
+            <th>@MovieDvds.HeaderGenre</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr data-ng-repeat="movieDvd in movieDvds">
+            <td><a href="#/Edit/{{movieDvd.Id}}">{{movieDvd.Title}}</a></td>
+            <td>{{movieDvd.Price}}</td>
+            <td>{{movieDvd.Genre}}</td>
+        </tr>
+    </tbody>
+</table>

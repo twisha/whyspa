@@ -5,7 +5,7 @@
             $scope.selectedGenre = $routeParams.genreId;
         }
         $scope.search = function () {
-            musicAlbumsNavigationService.setSelectedGenre($scope.selectedGenre);
+            musicAlbumsNavigationService.setListUrl($scope.selectedGenre);
             musicAlbumsService.getAlbums($scope.selectedGenre).then(function (albums) {
                 $scope.albums = albums;
             });

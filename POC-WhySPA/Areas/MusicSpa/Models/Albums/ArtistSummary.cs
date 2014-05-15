@@ -1,4 +1,4 @@
-﻿namespace POC_WhySPA.Areas.MusicSpa.Models
+﻿namespace POC_WhySPA.Areas.MusicSpa.Models.Albums
 {
     public class ArtistSummary
     {

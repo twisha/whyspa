@@ -8,6 +8,10 @@
     @Styles.Render("~/Content/bootstrap")
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    @Scripts.Render("~/bundles/oldIEBrowsersSupport")
+    <![endif]-->
     @Scripts.Render("~/bundles/angular")
     <script>
         var musicApp = musicApp || {};
@@ -16,7 +20,8 @@
     @RenderSection("HeadContent", false)
 </head>
 <body>
-    <div class="container" data-ng-app="musicAlbumsApp">
+    @Html.Partial("Header")
+    <div class="container">
         @RenderBody()
     </div>
 </body>

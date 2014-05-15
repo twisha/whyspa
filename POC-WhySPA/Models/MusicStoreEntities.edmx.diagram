@@ -17,6 +17,9 @@
         <AssociationConnector Association="MvcMusicStoreModel.Genre_Albums" ManuallyRouted="false" />
         <AssociationConnector Association="MvcMusicStoreModel.OrderDetail_Album" ManuallyRouted="false" />
         <AssociationConnector Association="MvcMusicStoreModel.Order_OrderDetails" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="MvcMusicStoreModel.MovieDvd" Width="1.5" PointX="11.497403209794967" PointY="12.459461620291444" />
+        <EntityTypeShape EntityType="MvcMusicStoreModel.MovieGenre" Width="1.5" PointX="1.7709739942899785" PointY="17.894310438024956" />
+        <AssociationConnector Association="MvcMusicStoreModel.MovieGenre_MovieDvd" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -14,5 +14,5 @@
         };
     };
     service.$inject = ['$location'];
-    app.factory("musicAlbumsNavigationService", service);
-})(angular.module("musicAlbumsApp"));
+    app.factory("movieDvdsNavigationService", service);
+})(angular.module("movieDvdsApp"));

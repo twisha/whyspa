@@ -5,15 +5,15 @@ using POC_WhySPA.Models;
 
 namespace POC_WhySPA.Areas.MusicSpa.Controllers
 {
-    public class ArtistApiController : ApiController
+    public class MovieGenreApiController : ApiController
     {
         public IEnumerable<KeyValuePair<int, string>> Get()
         {
             using (var ctx = new MvcMusicStoreEntities())
             {
-                var artists = ctx.Artists.Select(q => new {q.Name, q.ArtistId})
-                                 .ToDictionary(k => k.ArtistId, v => v.Name);
-                return artists;
+                var movieGenresRaw = ctx.MovieGenres.Select(q => new { q.MovieGenreId, q.Name }).ToList();
+                var movieGenres = movieGenresRaw.Select(q => new KeyValuePair<int, string>(q.MovieGenreId, q.Name));
+                return movieGenres;
             }
         }
     }

@@ -3,6 +3,7 @@ using System.Linq;
 using System.Net;
 using System.Web.Http;
 using POC_WhySPA.Areas.MusicSpa.Models;
+using POC_WhySPA.Areas.MusicSpa.Models.Albums;
 using POC_WhySPA.Models;
 
 namespace POC_WhySPA.Areas.MusicSpa.Controllers
@@ -18,7 +19,8 @@ namespace POC_WhySPA.Areas.MusicSpa.Controllers
                                 where album.AlbumId == id
                                 join artist in ctx.Artists on album.ArtistId equals artist.ArtistId
                                 join genre in ctx.Genres on album.GenreId equals genre.GenreId
-                                select new {album, artist, genre}).Single();
+                                select new {album, artist, genre}).SingleOrDefault();
+                if (albumRaw == null) throw new HttpResponseException(HttpStatusCode.NotFound);
                 var albumDetail = new AlbumDetail
                     {
                         Id = albumRaw.album.AlbumId,

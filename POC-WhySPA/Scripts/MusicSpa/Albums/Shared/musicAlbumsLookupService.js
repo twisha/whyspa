@@ -3,6 +3,7 @@
         var getGenres = function () {
             var deferred = $q.defer();
             $http.get(window.musicApp.rootUrl + "api/GenreApi", { cache: true }).success(function (data) {
+                data.unshift({ Key: 0, Value: '' });
                 deferred.resolve(data);
             }).error(function () {
                 deferred.reject();
@@ -12,6 +13,7 @@
         var getArtists = function () {
             var deferred = $q.defer();
             $http.get(window.musicApp.rootUrl + "api/ArtistApi", { cache: true }).success(function (data) {
+                data.unshift({ Key: 0, Value: '' });
                 deferred.resolve(data);
             }).error(function () {
                 deferred.reject();

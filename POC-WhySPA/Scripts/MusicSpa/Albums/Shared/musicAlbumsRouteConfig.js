@@ -2,13 +2,13 @@
     var routeConfig = function ($routeProvider) {
         $routeProvider.when("/", {
             controller: "musicAlbumsController",
-            templateUrl: "/MusicSpa/Albums/List"
+            templateUrl: window.musicApp.rootUrl + "MusicSpa/Albums/List"
         }).when("/:genreId", {
             controller: "musicAlbumsController",
-            templateUrl: "/MusicSpa/Albums/List"
+            templateUrl: window.musicApp.rootUrl + "MusicSpa/Albums/List"
         }).when("/Edit/:id", {
             controller: "musicAlbumEditController",
-            templateUrl: "/MusicSpa/Albums/Edit"
+            templateUrl: window.musicApp.rootUrl + "MusicSpa/Albums/Edit"
         }).otherwise({ redirectTo: "/" });
     };
     routeConfig.$inject = ['$routeProvider'];

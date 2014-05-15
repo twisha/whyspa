@@ -11,9 +11,8 @@ namespace POC_WhySPA.Areas.MusicSpa.Controllers
         {
             using (var ctx = new MvcMusicStoreEntities())
             {
-                var genres = ctx.Genres.Select(q => new { q.Name, q.GenreId })
-                                   .ToDictionary(k => k.GenreId, v => v.Name).ToList();
-                genres.Insert(0, new KeyValuePair<int, string>(0, string.Empty));
+                var genresRaw = ctx.Genres.Select(q => new { q.Name, q.GenreId }).ToList();
+                var genres = genresRaw.Select(q=>new KeyValuePair<int, string>(q.GenreId,q.Name));
                 return genres;
             }
         }
