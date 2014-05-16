@@ -10,12 +10,12 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Why SPA?</a>
+            <a class="navbar-brand" href="@Url.Action("Index", "Home", new { area = "" })">Why SPA?</a>
         </div>
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li class="@(ViewBag.ActiveModule == "Music"? "active":"")"><a href="@Url.Action("Index", "Albums", new { area = "MusicSpa" })">Music</a></li>
-                <li class="@(ViewBag.ActiveModule == "Movies"? "active":"")"><a href="@Url.Action("Index", "MovieDvds", new { area = "MusicSpa" })">Movies</a></li>
+                <li class="@(ViewBag.ActiveModule == "Music" ? "active" : "")"><a href="@Url.Action("Index", "Albums", new { area = "MusicSpa" })">Music</a></li>
+                <li class="@(ViewBag.ActiveModule == "Movies" ? "active" : "")"><a href="@Url.Action("Index", "MovieDvds", new { area = "MusicSpa" })">Movies</a></li>
             </ul>
         </div>
     </div>
