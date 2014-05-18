@@ -8,12 +8,10 @@
             movieDvdsNavigationService.setListUrl($scope.selectedGenre);
             movieDvdsService.getMovieDvds($scope.selectedGenre).then(function (movieDvds) {
                 $scope.movieDvds = movieDvds;
-                alert($scope.movieDvds.length);
             });
         };
         movieDvdsLookupService.getGenres().then(function(genres) {
             $scope.genres = genres;
-            alert($scope.genres.length);
         });
         $scope.search();
     };
