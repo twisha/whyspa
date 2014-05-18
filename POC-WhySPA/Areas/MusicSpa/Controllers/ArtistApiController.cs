@@ -11,8 +11,8 @@ namespace POC_WhySPA.Areas.MusicSpa.Controllers
         {
             using (var ctx = new MvcMusicStoreEntities())
             {
-                var artists = ctx.Artists.Select(q => new {q.Name, q.ArtistId})
-                                 .ToDictionary(k => k.ArtistId, v => v.Name);
+                var artistsRaw = ctx.Artists.Select(q => new { q.Name, q.ArtistId }).ToList();
+                var artists = artistsRaw.Select(q => new KeyValuePair<int, string>(q.ArtistId, q.Name));
                 return artists;
             }
         }

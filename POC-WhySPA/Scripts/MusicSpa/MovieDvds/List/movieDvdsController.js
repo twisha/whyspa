@@ -1,5 +1,5 @@
 ﻿(function(app) {
-    var controller = function($scope, $routeParams, movieDvdsService, movieDvdsLookupService, movieDvdsNavigationService) {
+    var controller = function ($scope, $routeParams, movieDvdsService, movieDvdsLookupService, movieDvdsNavigationService) {
         $scope.selectedGenre = 0;
         if (typeof $routeParams.genreId !== "undefined") {
             $scope.selectedGenre = $routeParams.genreId;
@@ -8,10 +8,12 @@
             movieDvdsNavigationService.setListUrl($scope.selectedGenre);
             movieDvdsService.getMovieDvds($scope.selectedGenre).then(function (movieDvds) {
                 $scope.movieDvds = movieDvds;
+                alert($scope.movieDvds.length);
             });
         };
         movieDvdsLookupService.getGenres().then(function(genres) {
             $scope.genres = genres;
+            alert($scope.genres.length);
         });
         $scope.search();
     };

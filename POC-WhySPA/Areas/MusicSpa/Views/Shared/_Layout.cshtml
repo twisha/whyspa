@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
     @Styles.Render("~/Content/bootstrap")
+    @Styles.Render("~/Content/app")
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -13,8 +14,8 @@
     @Scripts.Render("~/bundles/oldIEBrowsersSupport")
     <![endif]-->
     @Scripts.Render("~/bundles/angular")
+    @Scripts.Render("~/bundles/app")
     <script>
-        var musicApp = musicApp || {};
         musicApp.rootUrl = "@Url.Content("~/")";
     </script>
     @RenderSection("HeadContent", false)

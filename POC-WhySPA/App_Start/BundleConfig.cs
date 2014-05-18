@@ -60,6 +60,9 @@ namespace POC_WhySPA.App_Start
                                                                           "~/Scripts/MusicSpa/MovieDvds/Edit/movieDvdEditService.js")
                                                                       .Include(
                                                                           "~/Scripts/MusicSpa/MovieDvds/Edit/movieDvdEditController.js"));
+            //app
+            bundles.Add(new StyleBundle("~/Content/app").Include("~/Content/app.css"));
+            bundles.Add(new ScriptBundle("~/bundles/app").Include("~/Scripts/app.js"));
         }
     }
 }
