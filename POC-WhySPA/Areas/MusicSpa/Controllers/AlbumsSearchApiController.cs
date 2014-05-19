@@ -13,22 +13,20 @@ namespace POC_WhySPA.Areas.MusicSpa.Controllers
         {
             using (var ctx = new MvcMusicStoreEntities())
             {
-                var albumsRaw = (from album in ctx.Albums
-                                 join artist in ctx.Artists on album.ArtistId equals artist.ArtistId
-                                 join genre in ctx.Genres on album.GenreId equals genre.GenreId
-                                 where album.GenreId == (genreId == 0 ? album.GenreId : genreId)
-                                 orderby album.Title
-                                 select new { album, artist, genre }).ToList();
-                return albumsRaw.Select(
-                    q =>
-                    new AlbumSummary
-                        {
-                            Id = q.album.AlbumId,
-                            Title = q.album.Title,
-                            Price = q.album.Price,
-                            Artist = new KeyValuePair<int, string>(q.artist.ArtistId, q.artist.Name),
-                            Genre = q.genre.Name
-                        });
+                var albums = (from album in ctx.Albums
+                              join artist in ctx.Artists on album.ArtistId equals artist.ArtistId
+                              join genre in ctx.Genres on album.GenreId equals genre.GenreId
+                              where album.GenreId == (genreId == 0 ? album.GenreId : genreId)
+                              orderby album.Title
+                              select new AlbumSummary
+                                  {
+                                      Id = album.AlbumId,
+                                      Title = album.Title,
+                                      Price = album.Price,
+                                      Artist = artist.Name,
+                                      Genre = genre.Name
+                                  }).ToList();
+                return albums;
             }
         }
     }

@@ -17,14 +17,14 @@ namespace POC_WhySPA.App_Start
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include("~/Scripts/bootstrap.js"));
             bundles.Add(new StyleBundle("~/Content/bootstrap").Include("~/Content/bootstrap.css"));
 
-            bundles.Add(new ScriptBundle("~/bundles/oldIEBrowsersSupport").Include(
-                "~/Scripts/respond.js",
-                "~/Scripts/html5shiv.js"));
+            bundles.Add(new ScriptBundle("~/bundles/oldIEBrowsersSupport").Include("~/Scripts/respond.js")
+                                                                          .Include("~/Scripts/html5shiv.js"));
 
             //AngularJs
             bundles.Add(
                 new ScriptBundle("~/bundles/angular").Include("~/Scripts/angular.js")
                                                      .Include("~/Scripts/angular-route.js"));
+
             //AngularJs Scripts - Music Albums Module
             bundles.Add(
                 new ScriptBundle("~/bundles/angularMusicAlbums").Include(

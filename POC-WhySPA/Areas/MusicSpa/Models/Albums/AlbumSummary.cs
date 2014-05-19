@@ -8,7 +8,7 @@ namespace POC_WhySPA.Areas.MusicSpa.Models.Albums
 
         public string Title { get; set; }
 
-        public KeyValuePair<int,string> Artist { get; set; }
+        public string Artist { get; set; }
 
         public decimal Price { get; set; }
 

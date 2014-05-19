@@ -10,11 +10,11 @@
     </div>
     <button type="submit" class="btn btn-primary">Search</button>
 </form>
-<table class="table" data-ng-table="tableParams">
+<table class="table" data-ng-table="tableParams" data-show-filter="true">
     <tr data-ng-repeat="album in $data">
-        <td data-title="'@Albums.HeaderTitle'"><a href="#/Edit/{{album.Id}}">{{album.Title}}</a></td>
-        <td data-title="'@Albums.HeaderArtistName'">{{album.Artist.Value}}</td>
-        <td data-title="'@Albums.HeaderPrice'">{{album.Price}}</td>
-        <td data-title="'@Albums.HeaderGenre'">{{album.Genre}}</td>
+        <td data-title="'@Albums.HeaderTitle'" data-sortable="'Title'" data-filter="{ 'Title': 'text' }"><a href="#/Edit/{{album.Id}}">{{album.Title}}</a></td>
+        <td data-title="'@Albums.HeaderArtistName'" data-sortable="'Artist'" data-filter="{ 'Artist': 'select' }" filter-data="artists()">{{album.Artist}}</td>
+        <td data-title="'@Albums.HeaderPrice'" data-sortable="'Price'">{{album.Price}}</td>
+        <td data-title="'@Albums.HeaderGenre'" data-sortable="'Genre'">{{album.Genre}}</td>
     </tr>
 </table>
