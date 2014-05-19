@@ -13,7 +13,7 @@
 <table class="table" data-ng-table="tableParams" data-show-filter="true">
     <tr data-ng-repeat="album in $data">
         <td data-title="'@Albums.HeaderTitle'" data-sortable="'Title'" data-filter="{ 'Title': 'text' }"><a href="#/Edit/{{album.Id}}">{{album.Title}}</a></td>
-        <td data-title="'@Albums.HeaderArtistName'" data-sortable="'Artist'" data-filter="{ 'Artist': 'select' }" filter-data="artists()">{{album.Artist}}</td>
+        <td data-title="'@Albums.HeaderArtistName'" data-sortable="'Artist'" data-filter="{ 'Artist': 'text' }">{{album.Artist}}</td>
         <td data-title="'@Albums.HeaderPrice'" data-sortable="'Price'">{{album.Price}}</td>
         <td data-title="'@Albums.HeaderGenre'" data-sortable="'Genre'">{{album.Genre}}</td>
     </tr>

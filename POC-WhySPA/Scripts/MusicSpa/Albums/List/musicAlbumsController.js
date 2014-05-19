@@ -23,28 +23,13 @@
                 });
             }
         });
-        $scope.artists = function () {
-            var deferred = $q.defer();
-            albumsSearchResultsPromise.then(function (albums) {
-                var artistsAll = $.map(albums, function (value) {
-                    return value.Artist;
-                });
-                var artists = [], artistsDistinct = [];
-                $.each(artistsAll, function (index, value) {
-                    if (artistsDistinct.indexOf(value) === -1) {
-                        artistsDistinct.push(value);
-                        artists.push({ 'id': value, 'title': value });
-                    }
-                });
-                deferred.resolve(artists);
-            });
-            return deferred;
-        };
         $scope.search = function () {
             musicAlbumsNavigationService.setListUrl($scope.selectedGenre);
             albumsSearchResultsPromise = musicAlbumsService.getAlbums($scope.selectedGenre);
             $scope.tableParams.page(1);
             $scope.tableParams.count(10);
+            $scope.tableParams.filter({});
+            $scope.tableParams.sorting({});
             $scope.tableParams.reload();
         };
     };
