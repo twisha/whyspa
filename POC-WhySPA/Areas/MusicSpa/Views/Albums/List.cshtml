@@ -10,7 +10,7 @@
     </div>
     <button type="submit" class="btn btn-primary">Search</button>
 </form>
-<table class="table" data-ng-table="tableParams" data-show-filter="true" template-pagination="custom/pager">
+<table class="table" data-ng-table="tableParams" data-show-filter="true" data-template-pagination="custom/pager">
     <tr data-ng-repeat="album in $data">
         <td data-title="'@Albums.HeaderTitle'" data-sortable="'Title'" data-filter="{ 'Title': 'text' }"><a href="#/Edit/{{album.Id}}">{{album.Title}}</a></td>
         <td data-title="'@Albums.HeaderArtistName'" data-sortable="'Artist'" data-filter="{ 'Artist': 'text' }">{{album.Artist}}</td>
@@ -18,19 +18,4 @@
         <td data-title="'@Albums.HeaderGenre'" data-sortable="'Genre'">{{album.Genre}}</td>
     </tr>
 </table>
-<script type="text/ng-template" id="custom/pager">
-    <ul class="pagination ng-table-pagination pull-right">
-        <li data-ng-class="{'disabled': !page.active}" data-ng-repeat="page in pages" data-ng-switch="page.type">
-            <a data-ng-switch-when="prev" data-ng-click="params.page(page.number)">&laquo;</a>
-            <a data-ng-switch-when="first" data-ng-click="params.page(page.number)">
-                <span data-ng-bind="page.number"></span>
-            </a>
-            <a data-ng-switch-when="page" data-ng-click="params.page(page.number)">
-                <span data-ng-bind="page.number"></span>
-            </a><a data-ng-switch-when="more" data-ng-click="params.page(page.number)">&#8230;</a>
-            <a data-ng-switch-when="last" data-ng-click="params.page(page.number)">
-                <span data-ng-bind="page.number"></span>
-            </a><a data-ng-switch-when="next" data-ng-click="params.page(page.number)">&raquo;</a>
-        </li>
-    </ul>
-</script>
+@Html.Partial("Pager")

@@ -25,6 +25,12 @@ namespace POC_WhySPA.App_Start
                 new ScriptBundle("~/bundles/angular").Include("~/Scripts/angular.js")
                                                      .Include("~/Scripts/angular-route.js"));
 
+            //ngTable
+            bundles.Add(
+                new StyleBundle("~/Content/ngtable").Include("~/bower_components/ng-table/ng-table.css"));
+            bundles.Add(
+                new ScriptBundle("~/bundles/ngtable").Include("~/bower_components/ng-table/ng-table.js"));
+
             //AngularJs Scripts - Music Albums Module
             bundles.Add(
                 new ScriptBundle("~/bundles/angularMusicAlbums").Include(

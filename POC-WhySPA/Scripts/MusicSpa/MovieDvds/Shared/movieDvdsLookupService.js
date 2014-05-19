@@ -1,7 +1,6 @@
 ﻿(function(app) {
     var service = function($http, $q) {
         var getGenres = function () {
-            console.log("genres lookup");
             var deferred = $q.defer();
             var url = window.musicApp.rootUrl + "api/MovieGenreApi";
             $http.get(url, { cache: true }).success(function (data) {

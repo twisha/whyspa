@@ -5,24 +5,16 @@
         <label for="selectGenres">@MovieDvds.LabelGenres</label>
         <select id="selectGenres" data-ng-model="selectedGenre" class="form-control">
             <option data-ng-selected="{{genre.Key == selectedGenre}}"
-                    data-ng-repeat="genre in genres" value="{{genre.Key}}">{{genre.Value}}</option>
+                data-ng-repeat="genre in genres" value="{{genre.Key}}">{{genre.Value}}</option>
         </select>
     </div>
     <button type="submit" class="btn btn-primary">Search</button>
 </form>
-<table class="table">
-    <thead>
-        <tr>
-            <th>@MovieDvds.HeaderTitle</th>
-            <th>@MovieDvds.HeaderPrice</th>
-            <th>@MovieDvds.HeaderGenre</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr data-ng-repeat="movieDvd in movieDvds">
-            <td><a href="#/Edit/{{movieDvd.Id}}">{{movieDvd.Title}}</a></td>
-            <td>{{movieDvd.Price}}</td>
-            <td>{{movieDvd.Genre}}</td>
-        </tr>
-    </tbody>
+<table class="table" data-ng-table="tableParams" data-show-filter="true" data-template-pagination="custom/pager">
+    <tr data-ng-repeat="movieDvd in $data">
+        <td data-title="'@MovieDvds.HeaderTitle'" data-sortable="'Title'" data-filter="{ 'Title': 'text' }"><a href="#/Edit/{{movieDvd.Id}}">{{movieDvd.Title}}</a></td>
+        <td data-title="'@MovieDvds.HeaderPrice'" data-sortable="'Price'">{{movieDvd.Price}}</td>
+        <td data-title="'@MovieDvds.HeaderGenre'" data-sortable="'Genre'">{{movieDvd.Genre}}</td>
+    </tr>
 </table>
+@Html.Partial("Pager")
