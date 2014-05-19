@@ -242,6 +242,8 @@
     <Content Include="App_Data\MvcMusicStore.sdf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="bower_components\ng-table\ng-table.css" />
+    <Content Include="bower_components\ng-table\ng-table.js" />
     <Content Include="Content\app.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -292,6 +294,9 @@
     <Content Include="Areas\MusicSpa\Views\MovieDvds\List.cshtml" />
     <Content Include="Areas\MusicSpa\Views\MovieDvds\Edit.cshtml" />
     <Content Include="Areas\MusicSpa\Views\Shared\Header.cshtml" />
+    <None Include=".bin\bower.cmd" />
+    <None Include=".bin\git.cmd" />
+    <None Include=".bin\node.cmd" />
     <None Include="Properties\PublishProfiles\local.pubxml" />
     <Content Include="Scripts\angular-mocks.js" />
     <Content Include="Scripts\app.js" />
