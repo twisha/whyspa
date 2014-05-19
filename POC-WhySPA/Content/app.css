@@ -6,3 +6,7 @@
 .ng-table-pagination {
     margin: 0;
 }
+
+.ng-table-pagination li > a {
+    cursor: pointer;
+}

@@ -10,7 +10,7 @@
         var albumsSearchResultsPromise = musicAlbumsService.getAlbums($scope.selectedGenre);
         $scope.tableParams = new ngTableParams({
             page: 1, //Default Page Number
-            count: 10 //Default Page Size
+            count: 25 //Default Page Size
         }, {
             getData: function ($defer, params) {
                 albumsSearchResultsPromise.then(function (albums) {
