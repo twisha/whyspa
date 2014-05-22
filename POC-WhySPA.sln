@@ -3,6 +3,10 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "POC-WhySPA", "POC-WhySPA\POC-WhySPA.csproj", "{3730733C-5993-45D0-A813-212FBFB8F5AB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "POC-WhySPA.Test.Mvc", "POC-WhySPA.Test.Mvc\POC-WhySPA.Test.Mvc.csproj", "{EAE2A7B8-1480-4472-8185-48430796120C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "POC-WhySPA.Test.Scripts", "POC-WhySPA.Test.Scripts\POC-WhySPA.Test.Scripts.csproj", "{10ECB4B8-B332-4907-A72C-4EC6C4263342}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +17,14 @@ Global
 		{3730733C-5993-45D0-A813-212FBFB8F5AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3730733C-5993-45D0-A813-212FBFB8F5AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3730733C-5993-45D0-A813-212FBFB8F5AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EAE2A7B8-1480-4472-8185-48430796120C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EAE2A7B8-1480-4472-8185-48430796120C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EAE2A7B8-1480-4472-8185-48430796120C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EAE2A7B8-1480-4472-8185-48430796120C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10ECB4B8-B332-4907-A72C-4EC6C4263342}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10ECB4B8-B332-4907-A72C-4EC6C4263342}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10ECB4B8-B332-4907-A72C-4EC6C4263342}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10ECB4B8-B332-4907-A72C-4EC6C4263342}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
