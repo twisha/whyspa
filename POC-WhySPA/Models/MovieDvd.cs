@@ -9,9 +9,6 @@
 
 namespace POC_WhySPA.Models
 {
-    using System;
-    using System.Collections.Generic;
-    
     public partial class MovieDvd
     {
         public int MovieDvdId { get; set; }

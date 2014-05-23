@@ -9,9 +9,6 @@
 
 namespace POC_WhySPA.Models
 {
-    using System;
-    using System.Collections.Generic;
-    
     public partial class OrderDetail
     {
         public int OrderDetailId { get; set; }

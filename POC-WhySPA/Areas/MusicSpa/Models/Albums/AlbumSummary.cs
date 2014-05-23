@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace POC_WhySPA.Areas.MusicSpa.Models.Albums
+﻿namespace POC_WhySPA.Areas.MusicSpa.Models.Albums
 {
     public class AlbumSummary
     {

@@ -9,7 +9,6 @@
 
 namespace POC_WhySPA.Models
 {
-    using System;
     using System.Collections.Generic;
     
     public partial class Artist

@@ -9,7 +9,6 @@
 
 namespace POC_WhySPA.Models
 {
-    using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     

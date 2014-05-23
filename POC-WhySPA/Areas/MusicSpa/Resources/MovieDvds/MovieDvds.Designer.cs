@@ -9,9 +9,6 @@
 //------------------------------------------------------------------------------
 
 namespace POC_WhySPA.Areas.MusicSpa.Resources.MovieDvds {
-    using System;
-    
-    
     /// <summary>
     ///   A strongly-typed resource class, for looking up localized strings, etc.
     /// </summary>
