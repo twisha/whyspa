@@ -332,6 +332,10 @@
     <Content Include="Areas\MusicSpa\Views\Shared\Pager.cshtml" />
     <Content Include="Areas\MusicSpa\Views\AngularUIBootstrapExamples\Index.cshtml" />
     <Content Include="Areas\MusicSpa\Views\AngularUIBootstrapExamples\List.cshtml" />
+    <Content Include="Areas\MusicSpa\Views\AngularUIBootstrapExamples\Accordian.cshtml" />
+    <Content Include="Areas\MusicSpa\Views\AngularUIBootstrapExamples\Modal.cshtml" />
+    <Content Include="Areas\MusicSpa\Views\AngularUIBootstrapExamples\ModalContent.cshtml" />
+    <Content Include="Areas\MusicSpa\Views\MovieDvds\ModalView.cshtml" />
     <None Include="Properties\PublishProfiles\local.pubxml" />
     <Content Include="Scripts\angular-mocks.js" />
     <Content Include="Scripts\app.js" />
@@ -349,7 +353,8 @@
     <Content Include="Scripts\MusicSpa\Albums\Shared\musicAlbumsModule.js" />
     <Content Include="Scripts\MusicSpa\Albums\Shared\musicAlbumsRouteConfig.js" />
     <Content Include="Scripts\MusicSpa\Albums\List\musicAlbumsService.js" />
-    <Content Include="Scripts\MusicSpa\AngularUIBootstrapExamples\List\angularUIBootstrapExamplesController.js" />
+    <Content Include="Scripts\MusicSpa\AngularUIBootstrapExamples\Accordian\angularUIAccordianController.js" />
+    <Content Include="Scripts\MusicSpa\AngularUIBootstrapExamples\Modal\angularUIModalController.js" />
     <Content Include="Scripts\MusicSpa\AngularUIBootstrapExamples\Shared\angularUIBootstrapExamplesModule.js" />
     <Content Include="Scripts\MusicSpa\AngularUIBootstrapExamples\Shared\angularUIBootstrapExamplesRouteConfig.js" />
     <Content Include="Scripts\MusicSpa\MovieDvds\Edit\movieDvdEditService.js" />

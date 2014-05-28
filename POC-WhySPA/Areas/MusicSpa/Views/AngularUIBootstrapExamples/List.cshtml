@@ -1,24 +1,4 @@
-﻿<h6>Multiple panels can be expanded</h6>
-<accordion close-others="false"> 
-    <accordion-group heading="{{group.title}}" ng-repeat="group in groups">
-        {{group.content}}
-    </accordion-group>
-    <h6>By default, single panel can be expanded</h6>
-    <accordion-group heading="{{group.title}}" ng-repeat="group in groups">
-        {{group.content}}
-    </accordion-group>
-</accordion>
-<button class="btn btn-default btn-sm" data-ng-click="status.open = !status.open">Toggle panel 1</button>
-<button class="btn btn-default btn-sm" data-ng-click="status.disabled = !status.disabled">Enable / Disable panel 2</button>
-<accordion>
-    <accordion-group is-open="status.open">
-        <accordion-heading>
-            I can have markup, too! <i class="pull-right glyphicon" data-ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
-        </accordion-heading>
-        Sample content
-    </accordion-group>
-     <accordion-group heading="Static Header, initially expanded" is-disabled="status.disabled">
-      This content is straight in the template.
-    </accordion-group>
-</accordion>
-
+﻿<ul>
+    <li><a href="#/Accordian">Accordian</a></li>
+    <li><a href="#/Modal">Modal</a></li>
+</ul>

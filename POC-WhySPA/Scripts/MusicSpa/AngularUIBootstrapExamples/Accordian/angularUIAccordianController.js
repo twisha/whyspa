@@ -16,5 +16,5 @@
         };
     };
     controller.$inject = ['$scope'];
-    app.controller("angularUIBootstrapExamplesController", controller);
+    app.controller("angularUIAccordianController", controller);
 })(angular.module("angularUIBootstrapExamplesApp"));

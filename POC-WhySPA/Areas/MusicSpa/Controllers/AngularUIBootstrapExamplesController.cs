@@ -13,5 +13,20 @@ namespace POC_WhySPA.Areas.MusicSpa.Controllers
         {
             return PartialView();
         }
+
+        public ActionResult Accordian()
+        {
+            return PartialView();
+        }
+
+        public ActionResult Modal()
+        {
+            return PartialView();
+        }
+
+        public ActionResult ModalContent()
+        {
+            return PartialView();
+        }
     }
 }

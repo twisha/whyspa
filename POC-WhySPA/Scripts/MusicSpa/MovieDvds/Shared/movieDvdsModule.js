@@ -1,1 +1,1 @@
-﻿angular.module("movieDvdsApp", ['ngRoute', 'ngTable']);
+﻿angular.module("movieDvdsApp", ['ngRoute', 'ngTable', 'ui.bootstrap']);

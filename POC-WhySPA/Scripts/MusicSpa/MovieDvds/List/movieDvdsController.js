@@ -1,5 +1,5 @@
 ﻿(function (app) {
-    var controller = function ($scope, $routeParams, $filter, ngTableParams, movieDvdsService, movieDvdsLookupService, movieDvdsNavigationService) {
+    var controller = function($scope, $routeParams, $filter, ngTableParams, $modal, movieDvdsService, movieDvdsLookupService, movieDvdsNavigationService) {
         $scope.selectedGenre = 0;
         if (typeof $routeParams.genreId !== "undefined") {
             $scope.selectedGenre = $routeParams.genreId;
@@ -32,7 +32,29 @@
             $scope.tableParams.sorting({});
             $scope.tableParams.reload();
         };
+        $scope.view = function (id) {
+            movieDvdsService.getMovieDvd(id).then(function(movieDvd) {
+                $modal.open({
+                    templateUrl: '/MusicSpa/MovieDvds/ModalView',
+                    controller: modalInstanceController,
+                    resolve: {
+                        movieDvd: function () {
+                            return movieDvd;
+                        }
+                    }
+                });
+            });
+        };
+        var modalInstanceController = function ($scope, $modalInstance, movieDvd) {
+            $scope.movieDvd = movieDvd;
+            $scope.ok = function () {
+                $modalInstance.close();
+            };
+            $scope.cancel = function () {
+                $modalInstance.dismiss();
+            };
+        };
     };
-    controller.$inject = ['$scope', '$routeParams', '$filter', 'ngTableParams', 'movieDvdsService', 'movieDvdsLookupService', 'movieDvdsNavigationService'];
+    controller.$inject = ['$scope', '$routeParams', '$filter', 'ngTableParams', '$modal', 'movieDvdsService', 'movieDvdsLookupService', 'movieDvdsNavigationService'];
     app.controller("movieDvdsController", controller);
 })(angular.module("movieDvdsApp"));

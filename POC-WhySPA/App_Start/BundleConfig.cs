@@ -70,7 +70,9 @@ namespace POC_WhySPA
                     .Include(
                         "~/Scripts/MusicSpa/AngularUIBootstrapExamples/Shared/angularUIBootstrapExamplesRouteConfig.js")
                     .Include(
-                        "~/Scripts/MusicSpa/AngularUIBootstrapExamples/List/angularUIBootstrapExamplesController.js"));
+                        "~/Scripts/MusicSpa/AngularUIBootstrapExamples/Accordian/angularUIAccordianController.js")
+                    .Include(
+                        "~/Scripts/MusicSpa/AngularUIBootstrapExamples/Modal/angularUIModalController.js"));
             //app
             bundles.Add(new StyleBundle("~/Content/app").Include("~/Content/app.css"));
             bundles.Add(new ScriptBundle("~/bundles/app").Include("~/Scripts/app.js"));
