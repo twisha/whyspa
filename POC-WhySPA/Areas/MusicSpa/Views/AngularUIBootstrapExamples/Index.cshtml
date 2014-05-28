@@ -1,0 +1,11 @@
+﻿@{
+    ViewBag.Title = "Angular UI Bootstrap";
+    ViewBag.ActiveModule = "AngularUIBootstrap";
+}
+@section HeadContent
+{
+    @Scripts.Render("~/bundles/angularUIBootstrap")
+    @Scripts.Render("~/bundles/angularUIBootstrapExamples")
+}
+<div data-ng-app="angularUIBootstrapExamplesApp" data-ng-view="" data-ng-cloak="" style="margin-top: 20px;">
+</div>

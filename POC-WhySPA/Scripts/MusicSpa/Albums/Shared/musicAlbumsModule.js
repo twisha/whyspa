@@ -1,1 +1,1 @@
-﻿angular.module("musicAlbumsApp", ['ngRoute', 'ngTable']);
+﻿angular.module("musicAlbumsApp", ['ngRoute', 'ngTable', 'angular-loading-bar']);

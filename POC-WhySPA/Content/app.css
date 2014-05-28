@@ -1,12 +1,20 @@
 ﻿body {
-  min-height: 2000px;
-  padding-top: 40px;
+    min-height: 2000px;
+    padding-top: 40px;
+}
+
+.nav, .pagination, .carousel, .panel-title a {
+    cursor: pointer;
 }
 
 .ng-table-pagination {
     margin: 0;
 }
 
-.ng-table-pagination li > a {
-    cursor: pointer;
+    .ng-table-pagination li > a {
+        cursor: pointer;
+    }
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
 }

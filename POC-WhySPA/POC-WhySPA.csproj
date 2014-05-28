@@ -150,6 +150,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\StructureMapContainerFactory.cs" />
     <Compile Include="Areas\MusicSpa\Controllers\AlbumsController.cs" />
+    <Compile Include="Areas\MusicSpa\Controllers\AngularUIBootstrapExamplesController.cs" />
     <Compile Include="Areas\MusicSpa\Controllers\ArtistApiController.cs" />
     <Compile Include="Areas\MusicSpa\Controllers\MovieDvdsApiController.cs" />
     <Compile Include="Areas\MusicSpa\Controllers\MovieDvdsController.cs" />
@@ -268,6 +269,8 @@
     <Content Include="App_Data\MvcMusicStore.sdf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="bower_components\angular-loading-bar\src\loading-bar.css" />
+    <Content Include="bower_components\angular-loading-bar\src\loading-bar.js" />
     <Content Include="bower_components\ng-table\ng-table.css" />
     <Content Include="bower_components\ng-table\ng-table.js" />
     <Content Include="Content\app.css" />
@@ -289,6 +292,10 @@
     <Content Include="Areas\MusicSpa\Views\_ViewStart.cshtml" />
     <Content Include="Scripts\angular-route.js" />
     <Content Include="Scripts\angular-route.min.js" />
+    <Content Include="Scripts\angular-ui\ui-bootstrap-tpls.js" />
+    <Content Include="Scripts\angular-ui\ui-bootstrap-tpls.min.js" />
+    <Content Include="Scripts\angular-ui\ui-bootstrap.js" />
+    <Content Include="Scripts\angular-ui\ui-bootstrap.min.js" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
     <Content Include="Scripts\angular.min.js.map" />
@@ -319,11 +326,12 @@
     <Content Include="Areas\MusicSpa\Views\MovieDvds\Index.cshtml" />
     <Content Include="Areas\MusicSpa\Views\MovieDvds\List.cshtml" />
     <Content Include="Areas\MusicSpa\Views\MovieDvds\Edit.cshtml" />
-    <Content Include="Areas\MusicSpa\Views\Shared\Header.cshtml" />
     <None Include=".bin\bower.cmd" />
     <None Include=".bin\git.cmd" />
     <None Include=".bin\node.cmd" />
     <Content Include="Areas\MusicSpa\Views\Shared\Pager.cshtml" />
+    <Content Include="Areas\MusicSpa\Views\AngularUIBootstrapExamples\Index.cshtml" />
+    <Content Include="Areas\MusicSpa\Views\AngularUIBootstrapExamples\List.cshtml" />
     <None Include="Properties\PublishProfiles\local.pubxml" />
     <Content Include="Scripts\angular-mocks.js" />
     <Content Include="Scripts\app.js" />
@@ -341,6 +349,9 @@
     <Content Include="Scripts\MusicSpa\Albums\Shared\musicAlbumsModule.js" />
     <Content Include="Scripts\MusicSpa\Albums\Shared\musicAlbumsRouteConfig.js" />
     <Content Include="Scripts\MusicSpa\Albums\List\musicAlbumsService.js" />
+    <Content Include="Scripts\MusicSpa\AngularUIBootstrapExamples\List\angularUIBootstrapExamplesController.js" />
+    <Content Include="Scripts\MusicSpa\AngularUIBootstrapExamples\Shared\angularUIBootstrapExamplesModule.js" />
+    <Content Include="Scripts\MusicSpa\AngularUIBootstrapExamples\Shared\angularUIBootstrapExamplesRouteConfig.js" />
     <Content Include="Scripts\MusicSpa\MovieDvds\Edit\movieDvdEditService.js" />
     <Content Include="Scripts\MusicSpa\MovieDvds\List\movieDvdsController.js" />
     <Content Include="Scripts\MusicSpa\MovieDvds\List\movieDvdsService.js" />
