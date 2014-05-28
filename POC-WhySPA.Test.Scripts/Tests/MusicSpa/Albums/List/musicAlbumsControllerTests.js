@@ -15,7 +15,7 @@ describe('List: The controller musicAlbumsController', function () {
         testGenres,
         testAlbums;
     beforeEach(function () {
-        //load angular module
+        //load angular module (angular.mock.module)
         module('musicAlbumsApp');
         //create mocks
         musicAlbumsLookupServiceMock = jasmine.createSpyObj('musicAlbumsLookupService', ['getGenres']);
@@ -26,7 +26,7 @@ describe('List: The controller musicAlbumsController', function () {
         defaultGenre = 0;
         testGenres = ['Genre1', 'Genre2'];
         testAlbums = ['Album1', 'Album2'];
-        //inject angular dependencies
+        //inject angular dependencies (angular.mock.inject)
         inject(function ($rootScope, $controller, $q, $filter, ngTableParams) {
             $scope = $rootScope.$new();
             //set up mocks
