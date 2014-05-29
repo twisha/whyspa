@@ -15,7 +15,7 @@
     <AssemblyName>POC-WhySPA</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
-    <UseIISExpress>true</UseIISExpress>
+    <UseIISExpress>false</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
@@ -271,6 +271,7 @@
     </Content>
     <Content Include="bower_components\angular-loading-bar\src\loading-bar.css" />
     <Content Include="bower_components\angular-loading-bar\src\loading-bar.js" />
+    <Content Include="bower_components\es5-shim\es5-shim.js" />
     <Content Include="bower_components\ng-table\ng-table.css" />
     <Content Include="bower_components\ng-table\ng-table.js" />
     <Content Include="Content\app.css" />
@@ -446,7 +447,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>50974</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:53080/</IISUrl>
+          <IISUrl>http://localhost/POC-WhySPA</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

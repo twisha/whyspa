@@ -1,8 +1,8 @@
 ﻿(function (app) {
     var controller = function ($scope, $modal) {
-        $scope.open = function(size) {
+        $scope.open = function (size) {
             $modal.open({
-                templateUrl: '/MusicSpa/AngularUIBootstrapExamples/ModalContent',
+                templateUrl: window.musicApp.rootUrl + '/MusicSpa/AngularUIBootstrapExamples/ModalContent',
                 controller: modalInstanceController,
                 size: size,
                 resolve: {

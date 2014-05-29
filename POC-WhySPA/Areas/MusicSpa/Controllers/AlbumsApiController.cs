@@ -1,9 +1,7 @@
 ﻿using System.Net;
-using System.Net.Http;
 using System.Web.Http;
 using POC_WhySPA.Areas.MusicSpa.Models.Albums;
 using StructureMap.Attributes;
-using StructureMap.Building;
 
 namespace POC_WhySPA.Areas.MusicSpa.Controllers
 {

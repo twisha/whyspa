@@ -35,7 +35,7 @@
         $scope.view = function (id) {
             movieDvdsService.getMovieDvd(id).then(function(movieDvd) {
                 $modal.open({
-                    templateUrl: '/MusicSpa/MovieDvds/ModalView',
+                    templateUrl: window.musicApp.rootUrl + '/MusicSpa/MovieDvds/ModalView',
                     controller: modalInstanceController,
                     resolve: {
                         movieDvd: function () {

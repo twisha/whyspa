@@ -11,7 +11,8 @@ namespace POC_WhySPA
 
             //IE8 with Bootstrap
             bundles.Add(new ScriptBundle("~/bundles/oldIEBrowsersSupport").Include("~/Scripts/respond.js")
-                .Include("~/Scripts/html5shiv.js"));
+                .Include("~/Scripts/html5shiv.js")
+                .Include("~/bower_components/es5-shim/es5-shim.js"));
 
             //AngularJs
             bundles.Add(
