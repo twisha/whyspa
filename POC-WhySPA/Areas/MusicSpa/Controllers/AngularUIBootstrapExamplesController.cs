@@ -28,5 +28,10 @@ namespace POC_WhySPA.Areas.MusicSpa.Controllers
         {
             return PartialView();
         }
+
+        public ActionResult Carousel()
+        {
+            return PartialView();
+        }
     }
 }

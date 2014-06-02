@@ -12,7 +12,8 @@ namespace POC_WhySPA
             //IE8 with Bootstrap
             bundles.Add(new ScriptBundle("~/bundles/oldIEBrowsersSupport").Include("~/Scripts/respond.js")
                 .Include("~/Scripts/html5shiv.js")
-                .Include("~/bower_components/es5-shim/es5-shim.js"));
+                .Include("~/bower_components/es5-shim/es5-shim.js")
+                .Include("~/Scripts/angular-ui-bootstrap-ie8.js"));
 
             //AngularJs
             bundles.Add(
@@ -73,7 +74,9 @@ namespace POC_WhySPA
                     .Include(
                         "~/Scripts/MusicSpa/AngularUIBootstrapExamples/Accordian/angularUIAccordianController.js")
                     .Include(
-                        "~/Scripts/MusicSpa/AngularUIBootstrapExamples/Modal/angularUIModalController.js"));
+                        "~/Scripts/MusicSpa/AngularUIBootstrapExamples/Modal/angularUIModalController.js")
+                    .Include(
+                        "~/Scripts/MusicSpa/AngularUIBootstrapExamples/Carousel/angularUICarouselController.js"));
             //app
             bundles.Add(new StyleBundle("~/Content/app").Include("~/Content/app.css"));
             bundles.Add(new ScriptBundle("~/bundles/app").Include("~/Scripts/app.js"));

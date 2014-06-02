@@ -149,7 +149,7 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\StructureMapContainerFactory.cs" />
-    <Compile Include="Areas\MusicSpa\Controllers\AlbumsController.cs" />
+    <Compile Include="Areas\MusicSpa\Controllers\Albums\AlbumsController.cs" />
     <Compile Include="Areas\MusicSpa\Controllers\AngularUIBootstrapExamplesController.cs" />
     <Compile Include="Areas\MusicSpa\Controllers\ArtistApiController.cs" />
     <Compile Include="Areas\MusicSpa\Controllers\MovieDvdsApiController.cs" />
@@ -165,7 +165,7 @@
     <Compile Include="Areas\MusicSpa\Models\MovieDvds\MovieDvdDetail.cs" />
     <Compile Include="Areas\MusicSpa\Models\MovieDvds\MovieDvdSummary.cs" />
     <Compile Include="Areas\MusicSpa\MusicSpaAreaRegistration.cs" />
-    <Compile Include="Areas\MusicSpa\Controllers\AlbumsApiController.cs" />
+    <Compile Include="Areas\MusicSpa\Controllers\Albums\AlbumsApiController.cs" />
     <Compile Include="Areas\MusicSpa\Resources\Albums\AlbumEdit.Designer.cs">
       <DependentUpon>AlbumEdit.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -187,7 +187,7 @@
       <DependentUpon>MovieDvds.resx</DependentUpon>
     </Compile>
     <Compile Include="Areas\Music\Controllers\AlbumsController.cs" />
-    <Compile Include="Areas\MusicSpa\Controllers\AlbumsSearchApiController.cs" />
+    <Compile Include="Areas\MusicSpa\Controllers\Albums\AlbumsSearchApiController.cs" />
     <Compile Include="Areas\Music\Resources\Albums.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -293,6 +293,7 @@
     <Content Include="Areas\MusicSpa\Views\_ViewStart.cshtml" />
     <Content Include="Scripts\angular-route.js" />
     <Content Include="Scripts\angular-route.min.js" />
+    <Content Include="Scripts\angular-ui-bootstrap-ie8.js" />
     <Content Include="Scripts\angular-ui\ui-bootstrap-tpls.js" />
     <Content Include="Scripts\angular-ui\ui-bootstrap-tpls.min.js" />
     <Content Include="Scripts\angular-ui\ui-bootstrap.js" />
@@ -337,6 +338,7 @@
     <Content Include="Areas\MusicSpa\Views\AngularUIBootstrapExamples\Modal.cshtml" />
     <Content Include="Areas\MusicSpa\Views\AngularUIBootstrapExamples\ModalContent.cshtml" />
     <Content Include="Areas\MusicSpa\Views\MovieDvds\ModalView.cshtml" />
+    <Content Include="Areas\MusicSpa\Views\AngularUIBootstrapExamples\Carousel.cshtml" />
     <None Include="Properties\PublishProfiles\local.pubxml" />
     <Content Include="Scripts\angular-mocks.js" />
     <Content Include="Scripts\app.js" />
@@ -355,6 +357,7 @@
     <Content Include="Scripts\MusicSpa\Albums\Shared\musicAlbumsRouteConfig.js" />
     <Content Include="Scripts\MusicSpa\Albums\List\musicAlbumsService.js" />
     <Content Include="Scripts\MusicSpa\AngularUIBootstrapExamples\Accordian\angularUIAccordianController.js" />
+    <Content Include="Scripts\MusicSpa\AngularUIBootstrapExamples\Carousel\angularUICarouselController.js" />
     <Content Include="Scripts\MusicSpa\AngularUIBootstrapExamples\Modal\angularUIModalController.js" />
     <Content Include="Scripts\MusicSpa\AngularUIBootstrapExamples\Shared\angularUIBootstrapExamplesModule.js" />
     <Content Include="Scripts\MusicSpa\AngularUIBootstrapExamples\Shared\angularUIBootstrapExamplesRouteConfig.js" />

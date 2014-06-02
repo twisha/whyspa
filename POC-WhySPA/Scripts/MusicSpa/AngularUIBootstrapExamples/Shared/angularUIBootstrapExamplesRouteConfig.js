@@ -9,6 +9,9 @@
         }).when("/Modal", {
             controller: "angularUIModalController",
             templateUrl: window.musicApp.rootUrl + "MusicSpa/AngularUIBootstrapExamples/Modal"
+        }).when("/Carousel", {
+            controller: "angularUICarouselController",
+            templateUrl: window.musicApp.rootUrl + "MusicSpa/AngularUIBootstrapExamples/Carousel"
         }).otherwise({ redirectTo: "/" });
     };
     routeConfig.$inject = ['$routeProvider'];
