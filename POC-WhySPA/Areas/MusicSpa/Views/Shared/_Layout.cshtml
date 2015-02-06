@@ -12,7 +12,9 @@
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
     @Scripts.Render("~/bundles/oldIEBrowsersSupport")
-     <![endif]-->
+    <![endif]-->
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
     @Scripts.Render("~/bundles/angular")
     @Scripts.Render("~/bundles/angularUIBootstrap")
     @Scripts.Render("~/bundles/ngtable")
@@ -40,6 +42,19 @@
                         <li class="@(ViewBag.ActiveModule == "Music" ? "active" : "")"><a href="@Url.Action("Index", "Albums", new { area = "MusicSpa" })">Music</a></li>
                         <li class="@(ViewBag.ActiveModule == "Movies" ? "active" : "")"><a href="@Url.Action("Index", "MovieDvds", new { area = "MusicSpa" })">Movies</a></li>
                         <li class="@(ViewBag.ActiveModule == "AngularUIBootstrap" ? "active" : "")"><a href="@Url.Action("Index", "AngularUIBootstrapExamples", new { area = "MusicSpa" })">Angular UI Bootstrap</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#">Link</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Action</a></li>
+                                <li><a href="#">Another action</a></li>
+                                <li><a href="#">Something else here</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">Separated link</a></li>
+                            </ul>
+                        </li>
                     </ul>
                 </div>
             </div>

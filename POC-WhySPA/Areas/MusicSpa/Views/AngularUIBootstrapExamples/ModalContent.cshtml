@@ -1,16 +1,16 @@
-﻿<div class="modal-header">
+﻿@*<div class="modal-header">
     <button type="button" class="close" data-ng-click="cancel()">&times;</button>
     <h3 class="modal-title">I'm a modal!</h3>
-</div>
+</div>*@
 <div class="modal-body">
-    <ul>
+    @*    <ul>
         <li data-ng-repeat="item in items">
             <a href="" data-ng-click="selected.item = item">{{ item }}</a>
         </li>
     </ul>
-    Selected: <b>{{ selected.item }}</b>
+    Selected: <b>{{ selected.item }}</b>*@
+    <p>Your changes have been saved successfully.</p>
 </div>
 <div class="modal-footer">
     <button class="btn btn-primary" data-ng-click="ok()">OK</button>
-    <button class="btn btn-warning" data-ng-click="cancel()">Cancel</button>
 </div>

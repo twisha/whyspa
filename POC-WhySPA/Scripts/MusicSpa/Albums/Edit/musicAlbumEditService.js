@@ -20,9 +20,20 @@
             });
             return deferred.promise;
         };
+        var addAlbum = function (album) {
+            var url = window.musicApp.rootUrl + "api/AlbumsApi";
+            var deferred = $q.defer();
+            $http.post(url, album).success(function (data) {
+                deferred.resolve(data);
+            }).error(function () {
+                deferred.reject();
+            });
+            return deferred.promise;
+        };
         return {
             getAlbum: getAlbum,
             saveAlbum: saveAlbum,
+            addAlbum: addAlbum
         };
     };
     service.$inject = ['$http', '$q'];

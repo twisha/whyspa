@@ -24,5 +24,11 @@ namespace POC_WhySPA.Areas.MusicSpa.Controllers
             album.Id = id;
             AlbumsRepository.Save(album);
         }
+
+        public void Post(AlbumDetail album)
+        {
+            album.Id = null;
+            AlbumsRepository.Add(album);
+        }
     }
 }

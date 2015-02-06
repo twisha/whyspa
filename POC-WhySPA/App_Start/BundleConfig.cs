@@ -6,8 +6,12 @@ namespace POC_WhySPA
     {
         public static void RegisterBundles(BundleCollection bundles)
         {
+            //jQuery
+            bundles.Add(new ScriptBundle("~/bundles/jquery").Include("~/Scripts/jquery-{version}.js"));
+
             //bootstrap
             bundles.Add(new StyleBundle("~/Content/bootstrap").Include("~/Content/bootstrap.css"));
+            bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include("~/Scripts/bootstrap.js"));
 
             //IE8 with Bootstrap
             bundles.Add(new ScriptBundle("~/bundles/oldIEBrowsersSupport").Include("~/Scripts/respond.js")

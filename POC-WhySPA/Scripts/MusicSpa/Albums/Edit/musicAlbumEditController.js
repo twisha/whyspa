@@ -16,6 +16,13 @@
                 $scope.saveSuccess = false;
             });
         };
+        $scope.addAlbum = function () {
+            musicAlbumEditService.addAlbum($scope.album).then(function () {
+                $scope.saveSuccess = true;
+            }, function () {
+                $scope.saveSuccess = false;
+            });
+        };
         $scope.navigateToList = function () {
             musicAlbumsNavigationService.navigateToList();
         };
