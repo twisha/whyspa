@@ -27,3 +27,5 @@ _ReSharper*/
 [Tt]est[Rr]esult*
 *.vssscc
 $tf*/
+/.vs/POC-WhySPA/v15/Server/sqlite3
+/.vs
